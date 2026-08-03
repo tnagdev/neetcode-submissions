@@ -1,0 +1,17 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @return {number}
+     */
+    longestConsecutive(nums) {
+        const set = new Set(nums);
+        let max = 0;
+        for (let i = 0; i < nums.length; i++) {
+            if (set.has(nums[i]) && set.has(nums[i] - 1)) continue;
+            let start = nums[i]
+            while (set.has(start)) start++;
+            max = Math.max(max, start - nums[i]);
+        }
+        return max;
+    }
+}
