@@ -22,8 +22,6 @@ class Solution {
                     continue;
                 }
                 if (sum < 0) {
-                    while (left < right && nums[left][0] == nums[left + 1][0])
-                         left++;
                     left++;
                     continue;
                 } 
